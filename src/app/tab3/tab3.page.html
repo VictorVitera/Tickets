@@ -1,17 +1,57 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
+    <ion-title>Relatórios</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-button expand="block" color="danger" (click)="finalizarExpediente()">Finalizar Expediente</ion-button>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Senhas Emitidas</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let senha of relatorios.emitidas">
+          <ion-label>
+            <h3>{{ senha.numero }}</h3>
+            <p>Tipo: {{ senha.tipo }} | Emitida em: {{ senha.dataEmissao | date:'short' }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Senhas Atendidas</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let senha of relatorios.atendidas">
+          <ion-label>
+            <h3>{{ senha.numero }}</h3>
+            <p>Tipo: {{ senha.tipo }} | Atendida em: {{ senha.dataAtendimento | date:'short' }} | Guichê: {{ senha.guiche }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Senhas Não Atendidas</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let senha of relatorios.naoAtendidas">
+          <ion-label>
+            <h3>{{ senha.numero }}</h3>
+            <p>Tipo: {{ senha.tipo }} | Emitida em: {{ senha.dataEmissao | date:'short' }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
