@@ -1,5 +1,6 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
+<<<<<<< HEAD
     <ion-title>
       Senhas
     </ion-title>
@@ -68,4 +69,14 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+=======
+    <ion-title>Emissão de Senhas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button expand="block" color="primary" (click)="emitSenha('SP')">Emitir Senha Prioritária</ion-button>
+  <ion-button expand="block" color="secondary" (click)="emitSenha('SE')">Emitir Senha para Exames</ion-button>
+  <ion-button expand="block" color="tertiary" (click)="emitSenha('SG')">Emitir Senha Geral</ion-button>
+>>>>>>> 604bff2e340e524b177aeeae5acd0bcdf89ab0cd
 </ion-content>

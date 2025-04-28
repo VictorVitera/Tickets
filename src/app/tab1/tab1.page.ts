@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Component, OnInit } from '@angular/core';
 
 interface Senha {
@@ -124,4 +125,22 @@ export class Tab1Page implements OnInit {
     return `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
   }
 
+=======
+import { Component } from '@angular/core';
+import { QueueService } from 'src/app/services/queue.service';
+
+@Component({
+  selector: 'app-tab1',
+  templateUrl: './tab1.page.html',
+  styleUrls: ['./tab1.page.scss'],
+  standalone: false,
+})
+export class Tab1Page {
+  constructor(private queueService: QueueService) {}
+
+  emitSenha(type: 'SP' | 'SE' | 'SG') {
+    const senha = this.queueService.emitSenha(type);
+    alert(`Senha emitida: ${senha}`);
+  }
+>>>>>>> 604bff2e340e524b177aeeae5acd0bcdf89ab0cd
 }
