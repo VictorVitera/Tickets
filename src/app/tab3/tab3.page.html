@@ -1,28 +1,57 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Sistema
-    </ion-title>
+    <ion-title>Relatórios</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Sistema de Relatório</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-button expand="block" color="danger" (click)="finalizarExpediente()">Finalizar Expediente</ion-button>
 
   <ion-card>
+    <ion-card-header>
+      <ion-card-title>Senhas Emitidas</ion-card-title>
+    </ion-card-header>
     <ion-card-content>
       <ion-list>
-        <ion-label>Relatório de senhas</ion-label>
-        <ion-item>Senhas emitidas: </ion-item>
-        <ion-item>Senhas Geral: </ion-item>
-        <ion-item>Senhas Prioritárias: </ion-item>
-        <ion-item>Senhas Exame: </ion-item>
+        <ion-item *ngFor="let senha of relatorios.emitidas">
+          <ion-label>
+            <h3>{{ senha.numero }}</h3>
+            <p>Tipo: {{ senha.tipo }} | Emitida em: {{ senha.dataEmissao | date:'short' }}</p>
+          </ion-label>
+        </ion-item>
       </ion-list>
     </ion-card-content>
   </ion-card>
 
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Senhas Atendidas</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let senha of relatorios.atendidas">
+          <ion-label>
+            <h3>{{ senha.numero }}</h3>
+            <p>Tipo: {{ senha.tipo }} | Atendida em: {{ senha.dataAtendimento | date:'short' }} | Guichê: {{ senha.guiche }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Senhas Não Atendidas</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let senha of relatorios.naoAtendidas">
+          <ion-label>
+            <h3>{{ senha.numero }}</h3>
+            <p>Tipo: {{ senha.tipo }} | Emitida em: {{ senha.dataEmissao | date:'short' }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
