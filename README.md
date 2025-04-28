@@ -40,3 +40,8 @@ npm install
 
 # Rode o aplicativo no navegador
 ionic serve
+
+```
+## 📜 Licença
+
+Este projeto está licenciado sob a [Creative Commons Attribution 4.0 International License](LICENSE).
