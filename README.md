@@ -44,4 +44,4 @@ ionic serve
 ```
 ## 📜 Licença
 
-Este projeto está licenciado sob a [Creative Commons Attribution 4.0 International License](LICENSE).
+Este projeto está licenciado sob a [Creative Commons Attribution 4.0 International License](LICENSE.md).
